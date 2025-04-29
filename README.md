@@ -6,6 +6,9 @@ Built with offline-first principles and seamless deployment workflows, it suppor
 
 Whether you need a lean setup for a quick prototype or a feature-rich application, our prepared Turbo generators allow you to extend the stack precisely to your needs with [optional features](#optional-features). Get started with a solid foundation that grows with your project, from MVP to production-ready application.
 
+## MUST READ THIS!
+Inside Kleon_Main, you can find all the codes!
+
 ## Prerequisites
 
 To start working locally you'll need:
