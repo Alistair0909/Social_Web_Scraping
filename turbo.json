@@ -1,0 +1,116 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "ui": "tui",
+  "globalDependencies": ["**/.env"],
+  "tasks": {
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "db:reset": {
+      "dependsOn": ["^db:reset"],
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "build": {
+      "dependsOn": ["^db:migrate", "^build"],
+      "outputs": [
+        ".cache/tsbuildinfo.json",
+        ".next/**",
+        "!.next/cache/**",
+        "next-env.d.ts",
+        ".output/**",
+        "dist/**",
+        ".vercel/output/**"
+      ]
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "cache": false,
+      "persistent": false
+    },
+    "format": {
+      "outputs": [".cache/.prettiercache"],
+      "outputLogs": "new-only"
+    },
+    "lint": {
+      "dependsOn": ["^topo"],
+      "outputs": [".cache/.eslintcache"]
+    },
+    "typecheck": {
+      "dependsOn": ["^topo"],
+      "outputs": [".cache/tsbuildinfo.json"]
+    },
+    "prepare-tests": {},
+    "test": {
+      "dependsOn": ["prepare-tests"]
+    },
+    "start": {
+      "persistent": true
+    },
+    "@tonik/supabase#prepare-tests": {
+      "inputs": [
+        "migrations/**",
+        "snippets/test_utils.sql",
+        "seed.sql",
+        "scripts/**"
+      ]
+    },
+    "@tonik/supabase#test": {
+      "dependsOn": ["prepare-tests"],
+      "inputs": ["migrations/**", "seed.sql", "tests/**", "scripts/**"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
+    },
+    "generate:types": {
+      "cache": false
+    },
+    "generate:importmap": {
+      "cache": false
+    },
+    "ui-add": {
+      "cache": false,
+      "interactive": true
+    }
+  },
+  "globalEnv": [
+    "DATABASE_URI",
+    "POSTGRES_PRISMA_URL",
+    "POSTGRES_URL_NON_POOLING",
+    "POSTGRES_USER",
+    "POSTGRES_HOST",
+    "POSTGRES_PASSWORD",
+    "POSTGRES_DATABASE",
+    "SUPABASE_JWT_SECRET",
+    "POSTGRES_URL",
+    "PAYLOAD_SECRET",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "AUTH_DISCORD_ID",
+    "AUTH_DISCORD_SECRET",
+    "SUPABASE_URL",
+    "SUPABASE_ANON_KEY",
+    "NEXT_PUBLIC_VERCEL_URL",
+    "NEXT_PUBLIC_VERCEL_BRANCH_URL",
+    "NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL",
+    "PORT",
+    "LOG_LEVEL",
+    "API_SECRET"
+  ],
+  "globalPassThroughEnv": [
+    "COREPACK_HOME",
+    "ENABLE_EXPERIMENTAL_COREPACK",
+    "NODE_ENV",
+    "CI",
+    "VERCEL",
+    "VERCEL_ENV",
+    "VERCEL_URL",
+    "SKIP_ENV_VALIDATION",
+    "npm_lifecycle_event"
+  ]
+}
+

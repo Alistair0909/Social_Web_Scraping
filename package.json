@@ -1,0 +1,55 @@
+{
+  "name": "boring-stack",
+  "devDependencies": {
+    "@tonik/prettier-config": "workspace:*",
+    "@turbo/gen": "catalog:",
+    "knip": "^5.18.0",
+    "lint-staged": "^15.2.2",
+    "ora": "^8.1.1",
+    "prettier": "catalog:",
+    "tsx": "^4.19.3",
+    "turbo": "^2.3.3",
+    "typescript": "catalog:"
+  },
+  "boring": {
+    "namespace": "tonik"
+  },
+  "scripts": {
+    "boostrap": "pnpm --filter '!@generators/*' --filter '!@disabled/*' install",
+    "build": "turbo run build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo run clean",
+    "db:migrate": "turbo db:migrate",
+    "db:reset": "turbo db:reset",
+    "db:test": "pnpm --filter @tonik/supabase run test",
+    "dev": "tsx scripts/dev.ts",
+    "generate:types": "turbo generate:types",
+    "generate:seed": "pnpm --filter @tonik/supabase generate:seed",
+    "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
+    "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
+    "knip": "knip",
+    "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
+    "lint:ws": "pnpm dlx sherif@latest",
+    "postinstall": "pnpm lint:ws",
+    "start": "turbo start",
+    "supabase:start": "pnpm --filter @tonik/supabase run start",
+    "supabase:stop": "pnpm --filter @tonik/supabase run stop",
+    "supabase": "pnpm --filter @tonik/supabase run supabase",
+    "test": "turbo test",
+    "e2e": "turbo e2e",
+    "e2e:dev": "pnpm --filter @tonik/e2e run e2e:dev",
+    "e2e:ui": "pnpm e2e:dev --ui",
+    "typecheck": "turbo run typecheck",
+    "ui-add": "turbo run ui-add",
+    "payload": "pnpm --filter @tonik/nextjs payload",
+    "generate:importmap": "turbo generate:importmap"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a",
+  "prettier": "@tonik/prettier-config"
+}
