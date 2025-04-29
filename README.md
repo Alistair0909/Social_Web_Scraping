@@ -1,3 +1,10 @@
+## MUST READ THIS!
+Inside Kleon_Main, you can find all the codes!
+
+## Inspiration
+If you want to build a Web & Social scraping application to find Brand's Buyer Personas, you can be inspired by this Figma Prototype: https://www.figma.com/proto/Wr2lqkKyrCZ0LjRlHwGiRy/Prototype?page-id=36%3A35877&node-id=36-35878&viewport=-1826%2C2947%2C0.38&t=101XliAep4INiRnP-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=36%3A35878
+
+
 # Tonik's Boring Stack 🥱
 
 Welcome to the Tonik's Boring Stack, a foundation-focused toolkit built on top of [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo) with additional features and opinionated choices. This stack emphasizes robust architecture while maintaining rapid development capabilities, perfect for projects that need to move fast but grow reliably. While [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo) provides an excellent foundation, we've enhanced it with additional tools and practices specifically chosen to support scalable MVP development without compromising on production-readiness.
@@ -5,9 +12,6 @@ Welcome to the Tonik's Boring Stack, a foundation-focused toolkit built on top o
 Built with offline-first principles and seamless deployment workflows, it supports ephemeral environments through Supabase branching and Vercel preview deployments. The stack includes comprehensive end-to-end testing with Playwright, ensuring your applications remain reliable as they evolve.
 
 Whether you need a lean setup for a quick prototype or a feature-rich application, our prepared Turbo generators allow you to extend the stack precisely to your needs with [optional features](#optional-features). Get started with a solid foundation that grows with your project, from MVP to production-ready application.
-
-## MUST READ THIS!
-Inside Kleon_Main, you can find all the codes!
 
 ## Prerequisites
 
